@@ -1,0 +1,29 @@
+body{
+    background: linear-gradient(to right,#7fffe5,#00C9FF);
+}
+body div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+div .gamingscreen{
+    height: 300px;
+    width: 700px;
+    background-color: #00C9FF;
+    margin: 5% 0;
+    border-radius: 20px;
+    border: 1px solid rgb(179, 179, 179);
+}
+div .gamingconsole{
+    justify-content: center;
+    flex-direction: row;
+
+}
+@media (max-width:710px) {
+    div .gamingscreen{
+        height: 40vh;
+        width: 100%;
+        margin: 30% 0;
+    }
+}
