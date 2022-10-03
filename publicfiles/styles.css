@@ -11,17 +11,17 @@ div .gamingscreen{
     display: block;
     height: 300px;
     width: 400px;
-    /* background: url("/publicfiles/images/background.jpg") repeat-x; */
     margin: 5% 0;
     border-radius: 10px;
     border: 1px solid rgb(179, 179, 179);
     overflow: hidden;
 }
 .gamingscreen div{
-    background: url("/publicfiles/images/background.jpg") repeat-x;
+    position: relative;
+    background: url("./images/background.jpg") repeat-x;
     height: 300px;
-    width: 10390px;
-    animation: slide 45s linear infinite;
+    width: 5195px;
+    left: 0;
 }
 .gamingscreen span{
     z-index: 10;
@@ -52,12 +52,3 @@ button:hover{
     border: 2px solid;
     box-shadow: 2px 2px 20px rgba(83, 83, 83, 0.724);
 }
-
-@keyframes slide {
-    0% {
-      transform: translate(0);
-    }
-    100% {
-      transform: translate(-9990px); /* The image width */
-    }
-  }
