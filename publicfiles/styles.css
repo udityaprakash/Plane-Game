@@ -8,22 +8,28 @@ body div{
     flex-direction: column;
 }
 div .gamingscreen{
+    display: block;
     height: 300px;
-    width: 700px;
-    background-color: #00C9FF;
+    width: 400px;
+    background: linear-gradient(190deg,#56CCF2,#2F80ED);
     margin: 5% 0;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid rgb(179, 179, 179);
+    overflow: hidden;
 }
 div .gamingconsole{
-    justify-content: center;
     flex-direction: row;
 
 }
-@media (max-width:710px) {
-    div .gamingscreen{
-        height: 40vh;
-        width: 100%;
-        margin: 30% 0;
-    }
+#buildings{
+    position:relative;
+    height: 300px;
+    width: 50px;
+    background-color: antiquewhite;
+    top:0
+}
+#plane{
+    height: 10px;
+    width: 10px;
+    background-color: brown;
 }
