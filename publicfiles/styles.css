@@ -11,11 +11,23 @@ div .gamingscreen{
     display: block;
     height: 300px;
     width: 400px;
-    background: linear-gradient(190deg,#56CCF2,#2F80ED);
+    /* background: url("/publicfiles/images/background.jpg") repeat-x; */
     margin: 5% 0;
     border-radius: 10px;
     border: 1px solid rgb(179, 179, 179);
     overflow: hidden;
+}
+.gamingscreen div{
+    background: url("/publicfiles/images/background.jpg") repeat-x;
+    height: 300px;
+    width: 10390px;
+    animation: slide 45s linear infinite;
+}
+.gamingscreen span{
+    z-index: 10;
+    position: relative;
+    top: -100px;
+    left: 0px;
 }
 div .gamingconsole{
     flex-direction: row;
@@ -28,8 +40,24 @@ div .gamingconsole{
     background-color: antiquewhite;
     top:0
 }
-#plane{
-    height: 10px;
-    width: 10px;
-    background-color: brown;
+.gamingconsole button{
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    background-color: transparent;
+    cursor: pointer;
 }
+button:hover{
+    border: 2px solid;
+    box-shadow: 2px 2px 20px rgba(83, 83, 83, 0.724);
+}
+
+@keyframes slide {
+    0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-9990px); /* The image width */
+    }
+  }
