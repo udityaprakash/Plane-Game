@@ -28,14 +28,14 @@ function start(n){
 }
 function takeof(){
   if(takeoff==0 && engine!=0){
-    takeoff++;
     planetakeoff = setInterval(taking, 5);
     function taking() {
     if (land == -300) {
       clearInterval(planetakeoff);
+      takeoff++;
     } else {
       land--;  
-      plane.style.top = land + "px"; 
+      plane.style.top = land + "px";
     }
     }
   }else{
