@@ -7,6 +7,17 @@ let land = -100;
 let n = 10;
 var engine = 0;
 var takeoff=0;
+window.addEventListener("keypress",(ev) => {
+  console.log(ev.key);
+  if(ev.key=="Enter"){
+      start(n)
+  }else if(ev.key=="W" || ev.key=="w"){
+      takeof();
+  }else if(ev.key=="S" || ev.key=="s"){
+      landing();
+  }
+
+});
 function start(n){
     if(engine==0){
       engine++;
