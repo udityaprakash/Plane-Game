@@ -23,8 +23,9 @@ div .gamingscreen{
     width: 5195px;
     left: 0;
 }
-.gamingscreen span{
+#plane{
     z-index: 10;
+    height: auto;
     position: relative;
     top: -100px;
     left: 0px;
