@@ -3,6 +3,8 @@ let planetakeoff = null;
 const backg = document.getElementById("scrollx");  
 const plane = document.getElementById("plane"); 
 const planeimg = document.querySelector("#plane img");
+let wrong = new Audio("./publicfiles/sounds/wrong.mp3");
+let pop = new Audio("./publicfiles/sounds/pop.mp3");
 let posit = 0;
 let land = -100;
 var land_y =0;
@@ -22,6 +24,7 @@ window.addEventListener("keypress",(ev) => {
 });
 function start(){
     if(engine==0){
+      pop.play();
       engine++;
       bgmove = setInterval(frame, 5);
       function frame() {
@@ -48,6 +51,7 @@ function start(){
 }
 function takeof(){
   if(takeoff==0 && engine!=0){
+    pop.play();
     planetakeoff = setInterval(taking, 8);
     function taking() {
     if (land == -300) {
@@ -61,10 +65,12 @@ function takeof(){
     }
   }else{
     clearInterval(planetakeoff);
+    wrong.play();
   }
 }
 function landing(){
   if(takeoff!=0){
+    pop.play();
     planetakeoff = setInterval(tak, 8);
     function tak() {
     if (land == -100) {
@@ -77,10 +83,13 @@ function landing(){
       animatelandingandtakeoff();
     }
     }
+  }else{
+    wrong.play();
   }
 }
 function reverse(){
   if(engine>0 && land == -100){
+    pop.play();
     clearInterval(bgmove);
     bgmove = setInterval(framereverse, 5);
     function framereverse() {
@@ -97,6 +106,8 @@ function reverse(){
         }
       }
     }
+  }else{
+    wrong.play();
   }
 }
 function animatelandingandtakeoff(){
