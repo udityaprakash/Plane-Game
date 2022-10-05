@@ -16,13 +16,14 @@ window.addEventListener("keypress",(ev) => {
       takeof();
   }else if(ev.key=="S" || ev.key=="s"){
       landing();
+  }else if(ev.key==" "){
+      reverse();
   }
-
 });
 function start(){
     if(engine==0){
       engine++;
-      bgmove = setInterval(frame, 10);
+      bgmove = setInterval(frame, 5);
       function frame() {
       if (posit == -4795) {
         posit = 0;
@@ -47,13 +48,14 @@ function start(){
 }
 function takeof(){
   if(takeoff==0 && engine!=0){
-    planetakeoff = setInterval(taking, 5);
+    planetakeoff = setInterval(taking, 8);
     function taking() {
     if (land == -300) {
       clearInterval(planetakeoff);
       takeoff++;
     } else {
-      land--;  
+      land--; 
+      animatelandingandtakeoff() 
       plane.style.top = land + "px";
     }
     }
@@ -63,7 +65,7 @@ function takeof(){
 }
 function landing(){
   if(takeoff!=0){
-    planetakeoff = setInterval(tak, 5);
+    planetakeoff = setInterval(tak, 8);
     function tak() {
     if (land == -100) {
       clearInterval(planetakeoff);
@@ -72,6 +74,7 @@ function landing(){
     } else {
       land++;  
       plane.style.top = land + "px"; 
+      animatelandingandtakeoff();
     }
     }
   }
@@ -79,7 +82,7 @@ function landing(){
 function reverse(){
   if(engine>0 && land == -100){
     clearInterval(bgmove);
-    bgmove = setInterval(framereverse, 10);
+    bgmove = setInterval(framereverse, 5);
     function framereverse() {
       if (posit == 0) {
         posit = -4795;
@@ -90,10 +93,20 @@ function reverse(){
           plane.style.left = land_y + "px";
           land_y++;  
         }else if(land_y== 300){
-          planeimg.style.transform ='rotateY(180deg)';
+          animatelandingandtakeoff();
         }
       }
     }
-
+  }
+}
+function animatelandingandtakeoff(){
+  if((land>-297 && land<-100) && land_y == 0){
+    planeimg.style.transform ='rotateZ(-10deg)';
+  }else if(land_y ==0){
+    planeimg.style.transform ='rotateZ(0deg)';
+  }else if((land>-297 && land<-100) && land_y == 300){
+    planeimg.style.transform ='rotateY(180deg) rotateZ(-10deg)';
+  }else if(land_y == 300){
+    planeimg.style.transform ='rotateY(180deg) rotateZ(0deg)';
   }
 }

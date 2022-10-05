@@ -15,6 +15,7 @@ div .gamingscreen{
     border-radius: 10px;
     border: 1px solid rgb(179, 179, 179);
     overflow: hidden;
+    box-shadow: 2px 2px 10px 0px rgba(83, 83, 83, 0.724) ;
 }
 .gamingscreen div{
     position: relative;
@@ -31,7 +32,7 @@ div .gamingscreen{
     left:0px;
 }
 #plane img{
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) rotateZ(0deg);
 }
 div .gamingconsole{
     flex-direction: row;
@@ -49,6 +50,8 @@ div .gamingconsole{
     margin: 10px;
     border: 2px solid transparent;
     border-radius: 7px;
+    border: 2px solid rgba(160, 160, 160, 0.836);
+    box-shadow: 2px 2px 10px 0px rgba(83, 83, 83, 0.724) ;
     background-color: transparent;
     cursor: pointer;
 }
