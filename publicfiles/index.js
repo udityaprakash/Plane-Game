@@ -2,15 +2,16 @@ let bgmove = null;
 let planetakeoff = null;
 const backg = document.getElementById("scrollx");  
 const plane = document.getElementById("plane"); 
+const planeimg = document.querySelector("#plane img");
 let posit = 0;
 let land = -100;
-let n = 10;
+var land_y =0;
 var engine = 0;
 var takeoff=0;
 window.addEventListener("keypress",(ev) => {
   console.log(ev.key);
   if(ev.key=="Enter"){
-      start(n)
+      start()
   }else if(ev.key=="W" || ev.key=="w"){
       takeof();
   }else if(ev.key=="S" || ev.key=="s"){
@@ -18,16 +19,23 @@ window.addEventListener("keypress",(ev) => {
   }
 
 });
-function start(n){
+function start(){
     if(engine==0){
       engine++;
-      bgmove = setInterval(frame, n);
+      bgmove = setInterval(frame, 10);
       function frame() {
       if (posit == -4795) {
         posit = 0;
       } else {
         posit--;  
-        backg.style.left = posit + "px"; 
+        backg.style.left = posit + "px";
+        if(land_y>0){
+          plane.style.left = land_y + "px";
+          land_y--; 
+          if(land_y==0){
+            planeimg.style.transform ='rotateY(0deg)';
+          } 
+        }
       }
       }
     }else{
@@ -67,5 +75,25 @@ function landing(){
     }
     }
   }
+}
+function reverse(){
+  if(engine>0 && land == -100){
+    clearInterval(bgmove);
+    bgmove = setInterval(framereverse, 10);
+    function framereverse() {
+      if (posit == 0) {
+        posit = -4795;
+      } else {
+        posit++;
+        backg.style.left = posit + "px";
+        if(land_y<300){
+          plane.style.left = land_y + "px";
+          land_y++;  
+        }else if(land_y== 300){
+          planeimg.style.transform ='rotateY(180deg)';
+        }
+      }
+    }
 
+  }
 }

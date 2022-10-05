@@ -28,7 +28,10 @@ div .gamingscreen{
     height: auto;
     position: relative;
     top: -100px;
-    left: 0px;
+    left:0px;
+}
+#plane img{
+    transform: rotateY(0deg);
 }
 div .gamingconsole{
     flex-direction: row;
