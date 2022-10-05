@@ -56,3 +56,9 @@ button:hover{
     border: 2px solid;
     box-shadow: 2px 2px 20px rgba(83, 83, 83, 0.724);
 }
+@media (max-width:500px) {
+    .gamingconsole{
+        margin-top: 10%;
+        flex-wrap: wrap;
+    }
+}
