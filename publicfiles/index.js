@@ -20,6 +20,8 @@ window.addEventListener("keypress",(ev) => {
       landing();
   }else if(ev.key==" "){
       reverse();
+  }else{
+    wrong.play();
   }
 });
 function start(){
@@ -46,6 +48,8 @@ function start(){
       if(plane.style.top == "" || plane.style.top == "-100px"){
         clearInterval(bgmove);
         engine=0;
+      }else{
+        wrong.play();
       }
     }
 }
