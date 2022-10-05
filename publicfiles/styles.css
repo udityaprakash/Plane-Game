@@ -1,5 +1,6 @@
 body{
     background: linear-gradient(to right,#7fffe5,#00C9FF);
+    background-size:auto
 }
 body div{
     display: flex;
@@ -36,6 +37,9 @@ div .gamingscreen{
 }
 div .gamingconsole{
     flex-direction: row;
+    position: fixed;
+    bottom: 30px;
+
 
 }
 #buildings{
@@ -64,7 +68,8 @@ i{
 }
 @media (max-width:500px) {
     .gamingconsole{
-        margin-top: 10%;
+        /* margin-top: 10%; */
         flex-wrap: wrap;
+        bottom: 0px;
     }
 }
