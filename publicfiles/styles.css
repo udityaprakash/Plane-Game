@@ -39,8 +39,6 @@ div .gamingconsole{
     flex-direction: row;
     position: fixed;
     bottom: 30px;
-
-
 }
 #buildings{
     position:relative;
@@ -68,7 +66,6 @@ i{
 }
 @media (max-width:500px) {
     .gamingconsole{
-        /* margin-top: 10%; */
         flex-wrap: wrap;
         bottom: 0px;
     }
