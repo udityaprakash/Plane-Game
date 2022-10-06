@@ -54,7 +54,7 @@ function start(){
     }
 }
 function takeof(){
-  if(takeoff==0 && engine!=0){
+  if((takeoff==0 && engine!=0) && land == -100){
     pop.play();
     planetakeoff = setInterval(taking, 8);
     function taking() {
@@ -68,12 +68,14 @@ function takeof(){
     }
     }
   }else{
-    clearInterval(planetakeoff);
+    if(land==-300){
+      clearInterval(planetakeoff);
+    }
     wrong.play();
   }
 }
 function landing(){
-  if(takeoff!=0){
+  if(takeoff!=0 && land == -300){
     pop.play();
     planetakeoff = setInterval(tak, 8);
     function tak() {
