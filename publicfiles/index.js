@@ -75,7 +75,7 @@ function takeof(){
   }
 }
 function landing(){
-  if(takeoff!=0 && land == -300){
+  if(takeoff!=0 && land == -300){ 
     pop.play();
     planetakeoff = setInterval(tak, 8);
     function tak() {
